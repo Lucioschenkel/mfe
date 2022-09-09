@@ -7,8 +7,6 @@ import Landing from './components/Landing';
 import Pricing from './components/Pricing';
 
 export default function AppEntry() {
-  console.log('ldev::mfe - Loading AppEntry onto the DOM');
-
   return (
     <div>
       <StylesProvider>
