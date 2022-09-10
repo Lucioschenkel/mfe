@@ -1,17 +1,24 @@
-import React from 'react';
+import React from "react";
 
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import { StylesProvider } from '@material-ui/core/styles';
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import {
+  StylesProvider,
+  createGenerateClassName,
+} from "@material-ui/core/styles";
 
-import Landing from './components/Landing';
-import Pricing from './components/Pricing';
+import Landing from "./components/Landing";
+import Pricing from "./components/Pricing";
+
+const generateClassName = createGenerateClassName({
+  productionPrefix: "ma",
+});
 
 export default function AppEntry() {
-  console.log('ldev::mfe AppEntry loaded');
+  console.log("ldev::mfe AppEntry loaded");
 
   return (
     <div>
-      <StylesProvider>
+      <StylesProvider generateClassName={generateClassName}>
         <BrowserRouter>
           <Switch>
             <Route exact path="/pricing" component={Pricing} />
